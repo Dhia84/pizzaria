@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Le Burrata - Pizzeria</title>
+</head>
+<body>
+
+<header>
+    <img src="logo.png" alt="Logo Le Burrata" class="logo">
+    <nav>
+        <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#panier-section" onclick="afficherPanier()">🛒 <span id="cart-count">0</span></a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="accueil">
+    <div class="overlay">
+        <h2>Bienvenue chez Le Burrata</h2>
+        <p>Découvrez nos délicieuses pizzas artisanales !</p>
+    </div>
+</section>
+
+<section id="menu">
+    <h2>Notre Menu</h2>
+
+    <!-- Pizzas Rouges -->
+    <div class="pizzas">
+        <h3>Pizzas Rouges</h3>
+        <div class="pizza">
+            <span>Margarita</span> - 10€
+            <p>Composition : Sauce tomate San Marzano DOP, mozzarella fior di latte, filet d’huile d'olive, basilic</p>
+            <button onclick="choisirOptions('Margarita', 10)">Ajouter au Panier</button>
+        </div>
+        <div class="pizza">
+            <span>Regina</span> - 12€
+            <p>Composition : Sauce tomate San Marzano DOP, mozzarella fior di latte, jambon, champignons, origan</p>
+            <button onclick="choisirOptions('Regina', 12)">Ajouter au Panier</button>
+        </div>
+        <div class="pizza">
+            <span>Thon</span> - 14€
+            <p>Composition : Mozzarella fior di latte, thon, oignons rouges, huile d'olive, origan, olives taggiasche</p>
+            <button onclick="choisirOptions('Thon', 14)">Ajouter au Panier</button>
+        </div>
+        <div class="pizza">
+            <span>Diavola</span> - 12.90€
+            <p>Composition : Sauce tomate San Marzano DOP, mozzarella fior di latte, oignons rouges, chorizo, basilic</p>
+            <button onclick="choisirOptions('Diavola', 12.90)">Ajouter au Panier</button>
+        </div>
+        <div class="pizza">
+            <span>Végétarienne</span> - 13€
+            <p>Composition : Sauce tomate San Marzano DOP, mozzarella fior di latte, champignons, poivrons, artichauts, basilic</p>
+            <button onclick="choisirOptions('Végétarienne', 13)">Ajouter au Panier</button>
+        </div>
+        <div class="pizza">
+            <span>Burrata Rosso</span> - 13.90€
+            <p>Composition : Sauce tomate San Marzano DOP, mozzarella fior di latte, salade verte, tomates cerises, burrata, basilic</p>
+            <button onclick="choisirOptions('Burrata Rosso', 13.90)">Ajouter au Panier</button>
+        </div>
+        <div class="pizza">
+            <span>Fior di Latte</span> - 14.90€
+            <p>Composition : Sauce tomate San Marzano DOP, mozzarella fior di latte, burrata, crème aux cèpes, basilic</p>
+            <button onclick="choisirOptions('Fior di Latte', 14.90)">Ajouter au Panier</button>
+        </div>
+    </div>
+
+    <!-- Pizzas Blanches -->
+    <div class="pizzas-blanches">
+        <h3>Pizzas Blanches</h3>
+        <div class="pizza">
+            <span>4 Fromages</span> - 14€
+            <p>Composition : Mozzarella fior di latte, gorgonzola, parmesan, provola, origan</p>
+            <button onclick="choisirOptions('4 Fromages', 14)">Ajouter au Panier</button>
+        </div>
+        <div class="pizza">
+            <span>Burrata</span> - 15€
+            <p>Composition : Mozzarella fior di latte, burrata, jambon de Parme, roquette, tomates cerises, basilic</p>
+            <button onclick="choisirOptions('Burrata', 15)">Ajouter au Panier</button>
+        </div>
+    </div>
+
+    <!-- Calzones -->
+    <div class="calzones">
+        <h3>Calzones</h3>
+        <div class="pizza">
+            <span>Calzone Traditionnel</span> - 13€
+            <p>Composition : Mozzarella fior di latte, jambon, champignons, tomates</p>
+            <button onclick="choisirOptions('Calzone Traditionnel', 13)">Ajouter au Panier</button>
+        </div>
+        <div class="pizza">
+            <span>Calzone Végétarien</span> - 13.50€
+            <p>Composition : Sauce tomate San Marzano DOP, mozzarella fior di latte, jambon de dinde, champignons</p>
+            <button onclick="choisirOptions('Calzone Végétarien', 13.50)">Ajouter au Panier</button>
+        </div>
+    </div>
+
+    <!-- Desserts -->
+    <div class="desserts">
+        <h3>Desserts</h3>
+        <div class="dessert">
+            <span>Tiramisu</span> - 6€
+            <button onclick="ajouterDessert('Tiramisu', 6)">Ajouter au Panier</button>
+        </div>
+        <div class="dessert">
+            <span>Panna Cotta</span> - 6€
+            <button onclick="ajouterDessert('Panna Cotta', 6)">Ajouter au Panier</button>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Téléphone : 09 86 28 08 73</p>
+    <p>Adresse : 2a Burrata Pizzeria, 123 Rue de la Pizzeria, Paris</p>
+</section>
+
+<footer>
+    <p>&copy; 2024 Le Burrata. Tous droits réservés.</p>
+</footer>
+
+<!-- Modal des Suppléments -->
+<div id="supplement-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="fermerModal()">&times;</span>
+        <h2 id="pizza-name"></h2>
+        <h3>Choisissez vos suppléments :</h3>
+        <div>
+            <input type="checkbox" id="champignons" name="champignons"> Champignons (+1€)<br>
+            <input type="checkbox" id="pepperoni" name="pepperoni"> Pepperoni (+1.50€)<br>
+            <input type="checkbox" id="olives" name="olives"> Olives (+0.50€)<br>
+            <label for="quantite">Quantité:</label>
+            <input type="number" id="quantite" name="quantite" min="1" value="1"><br>
+        </div>
+        <input type="hidden" id="supplement-prix">
+        <button onclick="ajouterSupplement()">Ajouter au Panier</button>
+    </div>
+</div>
+
+<!-- Section Panier -->
+<div id="panier-section" style="display: none;">
+    <h2>Mon Panier</h2>
+    <div id="panier"></div>
+    <p>Total : <span id="total">0.00</span>€</p>
+    <button onclick="viderPanier()">Vider le Panier</button>
+    <button onclick="finaliserCommande()">Finaliser la commande</button>
+</div>
+
+<!-- Résumé de la Commande -->
+<div id="resume-section" style="display: none;">
+    <h2>Résumé de la Commande</h2>
+    <div id="resume-panier"></div>
+    <p>Total à Payer : <span id="resume-total">0.00</span>€</p>
+    <button onclick="payer()">Payer</button>
+</div>
+
+<div id="notification" style="display:none;"></div>
+
+<script src="script.js"></script>
+<script src="https://js.stripe.com/v3/"></script>
+
+</body>
+</html>
+
